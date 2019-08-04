@@ -22,7 +22,7 @@ if [[ $platform == 'macOS' ]]; then
   brew bundle
 
   # Symlink .gitconfig
-  ln -sf ~/.config/gitconfig ~/.gitconfig
+  ln -sf ~/.config/git/gitconfig ~/.gitconfig
 
   # Make zsh the default shell 
   chsh -s $(which zsh)
