@@ -1,0 +1,93 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""" General  """"""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+filetype plugin indent on
+set nocompatible
+set backspace=indent,eol,start
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""" vim-plug  """"""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Install vim-plug if not present
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" vim-plug plugins. Run :PlugInstall to download them.
+call plug#begin('~/.vim/plugged')
+Plug 'itchyny/lightline.vim'
+Plug 'lifepillar/vim-solarized8'
+call plug#end()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""" User interface  """""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Ignore case when searching
+set ignorecase 
+
+" When searching, try to be smart about cases
+set smartcase 
+
+" Highlight search results
+set hlsearch 
+
+" Makes search act like search in modern browsers
+set incsearch 
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+" Set utf8 as standard encoding
+set encoding=utf8 
+
+" Set a margin at 80 characters
+set colorcolumn=80
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""" Text, tab, indent """"""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs
+set smarttab
+
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""" Color and fonts " """"""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Syntax highlighting
+syntax enable
+set termguicolors
+set background=dark
+colorscheme solarized8
+
+" Set utf8 as standard encoding
+set encoding=utf8 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""" Status line """""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Lightline configuration
+let g:lightline = {'colorscheme': 'solarized',}
+"
+" Use lightline instead of the default vim message
+set noshowmode 
+
+" Always show the status line
+set laststatus=2 

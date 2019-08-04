@@ -1,0 +1,10 @@
+[user]
+	name = Samuel Diebolt
+	email = stryars@gmail.com
+[credential]
+	helper = osxkeychain
+[pager]
+  diff = diff-so-fancy | less --tabs=1,5 -RFX
+  show = diff-so-fancy | less --tabs=1,5 -RFX
+[core]
+	editor = vim
