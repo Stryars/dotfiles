@@ -77,11 +77,11 @@
     },
     "shrink-main": {
         "mod": "mod1",
-        "key": "h"
+        "key": "left"
     },
     "expand-main": {
         "mod": "mod1",
-        "key": "l"
+        "key": "right"
     },
     "increase-main": {
         "mod": "mod1",
@@ -200,7 +200,7 @@
     "enables-layout-hud-on-space-change": true,
     "window-margin-size": 15,
     "window-resize-step": 5,
-    "window-margins": false,
+    "window-margins": true,
     "window-minimum-height": 0,
     "window-minimum-width": 0,
     "ignore-menu-bar": false,

@@ -42,6 +42,9 @@ set incsearch
 " Show matching brackets when text indicator is over them
 set showmatch
 
+" Show line numbers
+set number
+
 " Set utf8 as standard encoding
 set encoding=utf8 
 
