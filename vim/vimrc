@@ -19,6 +19,8 @@ endif
 
 " vim-plug plugins. Run :PlugInstall to download them.
 call plug#begin('~/.vim/plugged')
+" vim-surround: all about surroundings: brackets, quotes, etc.
+Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'SirVer/ultisnips'
@@ -27,6 +29,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
+" Goyo: distraction free writing
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -71,9 +75,14 @@ set smarttab
 set shiftwidth=2
 set tabstop=2
 
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
+" Copy the identation of the previous line
+set autoindent
+
+" Insert one extra level of indentation in some cases
+set smartindent
+
+" Insert linebreak at 79 characters
+set textwidth=79
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""" Color and fonts " """"""""""""""""""""""
