@@ -89,6 +89,8 @@ set smartindent
 
 " Insert linebreak at 79 characters
 set textwidth=79
+let g:pandoc#formatting#textwidth=79
+let g:pandoc#formatting#mode = "h"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""" Color and fonts " """"""""""""""""""""""
