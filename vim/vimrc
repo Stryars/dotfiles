@@ -31,6 +31,12 @@ Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 " Goyo: distraction free writing
 Plug 'junegunn/goyo.vim'
+" Vim-Jinja2-Syntax: Jinja2 sytnax highlighting
+Plug 'Glench/Vim-Jinja2-Syntax'
+" vim-pandoc: Pandoc integration
+Plug 'vim-pandoc/vim-pandoc'
+" vim-pandoc-syntax: Pandoc markdown syntax
+Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
