@@ -7,6 +7,9 @@ export \
 	EDITOR=vim \
   PATH=/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:$PATH
 
+# See https://stackoverflow.com/questions/58272830/python-crashing-on-macos-10-15-beta-19a582a-with-usr-lib-libcrypto-dylib
+export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/opt/openssl/lib:$DYLD_LIBRARY_PATH
+
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=9"
 
 # Load plugins via antibody
