@@ -34,6 +34,10 @@ if [[ $platform == 'macOS' ]]; then
   # Symlink vimrc
   ln -sf ~/.config/vim/vimrc ~/.vimrc
 
+  # Symlink UltiSnips snippets
+  mkdir -p ~/.vim/UltiSnips/
+  ls -sf ~/.config/vim/UltiSnips/* ~/.vim/UltiSnips/
+
   # Specify iTerm2 preference directory
   defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.config/iterm"
   # Tell iTerm2 to use the custom preferences in the directory
