@@ -3,9 +3,9 @@
 # Identify OS
 platform='unknown'
 unamestr=$(uname)
-if [[ "$unamestr" == 'Linux' ]]; then
+if [[ $unamestr == 'Linux' ]]; then
    platform='linux'
-elif [[ "$unamestr" == 'Darwin' ]]; then
+elif [[ $unamestr == 'Darwin' ]]; then
    platform='macOS'
 fi
 
@@ -36,7 +36,7 @@ if [[ $platform == 'macOS' ]]; then
 
   # Symlink UltiSnips snippets
   mkdir -p ~/.vim/UltiSnips/
-  ls -sf ~/.config/vim/UltiSnips/* ~/.vim/UltiSnips/
+  ln -sf ~/.config/vim/UltiSnips/* ~/.vim/UltiSnips/
 
   # Specify iTerm2 preference directory
   defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.config/iterm"
@@ -45,5 +45,9 @@ if [[ $platform == 'macOS' ]]; then
 
   # Symlink Amethyst config
   ln -sf ~/.config/amethyst/amethyst ~/.amethyst
+elif [[ $platform == 'Linux' ]]; then
+  echo "Linux platforms not yet supported."
+else
+  echo "Only macOS and Linux platforms are supported."
 fi
 
