@@ -1,5 +1,13 @@
-neofetch/
-configstore/
-gtk-2.0/
-htop/
-thefuck/
+# Ignore everything
+*
+
+# But not these files
+!amethyst/
+!Brewfile
+!git/
+!install.sh
+!iterm2/
+!LICENSE.md
+!README.md
+!vim/
+!zsh/
