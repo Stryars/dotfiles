@@ -20,6 +20,9 @@ antibody bundle < ~/.zsh_plugins
 autoload -U promptinit; promptinit
 prompt pure
 
+# Enable vim mode in zsh
+bindkey -v
+
 # Aliases
 alias ls='ls -G'
 alias ll='ls -alhFG'
