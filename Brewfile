@@ -40,9 +40,6 @@ brew 'mas'
 brew 'imagemagick'
 brew 'ntfs-3g'
 brew 'pandoc'
-brew 'docker'
-brew 'docker-machine'
-brew 'docker-compose'
 
 # Cask
 cask 'osxfuse'
