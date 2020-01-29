@@ -1,6 +1,11 @@
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
+
+# zsh-async used for the Pure theme
 mafredri/zsh-async
+
+# Native zsh port of rupa/z
+agkozak/zsh-z
 
 # These should be last
 sindresorhus/pure
