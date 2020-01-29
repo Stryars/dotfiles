@@ -35,6 +35,3 @@ alias du="ncdu --color dark -rr -x"
 alias help='tldr'
 alias afk="open -a /System/Library/CoreServices/ScreenSaverEngine.app"
 eval $(thefuck --alias)
-
-# Load zsh syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
