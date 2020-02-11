@@ -45,6 +45,10 @@ if [[ $platform == 'macOS' ]]; then
 
   # Symlink Amethyst config
   ln -sf ~/.config/amethyst/amethyst ~/.amethyst
+
+  # Symlink R Makevars
+  mkdir ~/.R/
+  ln -sf ~/.config/R/Makevars ~/.R/Makevars
 elif [[ $platform == 'Linux' ]]; then
   echo "Linux platforms not yet supported."
 else

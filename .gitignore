@@ -1,13 +1,19 @@
 # Ignore everything
 *
 
-# But not these files
-!amethyst/
+# But not these files...
+!amethyst
 !Brewfile
-!git/
+!gitconfig
 !install.sh
-!iterm2/
+!com.googlecode.iterm2.plist
 !LICENSE.md
 !README.md
-!vim/
-!zsh/
+!vimrc
+!*.snippets
+!zsh_plugins.zsh
+!zshrc.zsh
+!Makevars
+
+# ...even if they are in subdirectories
+!*/
