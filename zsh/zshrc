@@ -37,4 +37,4 @@ alias afk="open -a /System/Library/CoreServices/ScreenSaverEngine.app"
 eval $(thefuck --alias)
 
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/.load_conda
+source ~/.config/load_conda.sh
