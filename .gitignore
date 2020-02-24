@@ -2,12 +2,16 @@
 *
 
 # But not these files
-!amethyst/
+!amethyst
 !Brewfile
-!git/
+!gitconfig
 !install.sh
-!iterm2/
+!com.googlecode.iterm2.plist
 !LICENSE.md
 !README.md
-!vim/
-!zsh/
+!vimrc
+!zshrc
+!zsh_plugins
+!tmux.conf
+
+!*/
