@@ -4,7 +4,7 @@
 # But not these files...
 !amethyst
 !Brewfile
-!gitconfig
+!gitconfig*
 !install.sh
 !com.googlecode.iterm2.plist
 !LICENSE.md
