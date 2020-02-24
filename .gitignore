@@ -1,7 +1,7 @@
 # Ignore everything
 *
 
-# But not these files
+# But not these files...
 !amethyst
 !Brewfile
 !gitconfig
@@ -13,5 +13,11 @@
 !zshrc
 !zsh_plugins
 !tmux.conf
+!*.snippets
+!Makevars
 
+# ...even if they are in subdirectories
 !*/
+
+# zsh-syntax-highlighting will be cloned by install.sh
+zsh-syntax-highlighting/

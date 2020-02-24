@@ -3,9 +3,9 @@
 # Identify OS
 platform='unknown'
 unamestr=$(uname)
-if [[ "$unamestr" == 'Linux' ]]; then
+if [[ $unamestr == 'Linux' ]]; then
    platform='linux'
-elif [[ "$unamestr" == 'Darwin' ]]; then
+elif [[ $unamestr == 'Darwin' ]]; then
    platform='macOS'
 fi
 
@@ -49,6 +49,10 @@ if [[ $platform == 'macOS' ]]; then
 
   # Symlink Amethyst config
   ln -sf ~/.config/amethyst/amethyst ~/.amethyst
+
+  # Symlink R Makevars
+  mkdir ~/.R/
+  ln -sf ~/.config/R/Makevars ~/.R/Makevars
 elif [[ $platform == 'linux' ]]; then
   # Get os name
   osname=$(cat /etc/os-release | grep ^ID | sed -e 's/ID=//')
@@ -61,7 +65,6 @@ elif [[ $platform == 'linux' ]]; then
       R \
       util-linux-user \
       zsh \
-      zsh-syntax-highlighting \
       neofetch \
       thefuck \
       prettyping \
@@ -104,5 +107,11 @@ elif [[ $platform == 'linux' ]]; then
   # Symlink UltiSnips snippets
   mkdir -p ~/.vim/UltiSnips/
   ln -sf ~/.config/vim/UltiSnips/* ~/.vim/UltiSnips/
+
+  # Symlink R Makevars
+  mkdir ~/.R/
+  ln -sf ~/.config/R/Makevars ~/.R/Makevars
+else
+  echo "Only macOS and Linux platforms are supported."
 fi
 
