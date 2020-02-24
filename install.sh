@@ -42,6 +42,9 @@ if [[ $platform == 'macOS' ]]; then
   mkdir -p ~/.vim/UltiSnips/
   ln -sf ~/.config/vim/UltiSnips/* ~/.vim/UltiSnips/
 
+  # Symlink tmux.conf
+  ln -sf ~/.config/tmux/tmux.conf ~/.tmux.conf
+
   # Specify iTerm2 preference directory
   defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.config/iterm"
   # Tell iTerm2 to use the custom preferences in the directory
@@ -107,6 +110,9 @@ elif [[ $platform == 'linux' ]]; then
   # Symlink UltiSnips snippets
   mkdir -p ~/.vim/UltiSnips/
   ln -sf ~/.config/vim/UltiSnips/* ~/.vim/UltiSnips/
+
+  # Symlink tmux.conf
+  ln -sf ~/.config/tmux/tmux.conf ~/.tmux.conf
 
   # Symlink R Makevars
   mkdir ~/.R/
