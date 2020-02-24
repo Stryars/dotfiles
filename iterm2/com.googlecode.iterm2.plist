@@ -1634,7 +1634,7 @@
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>14 26 1648 987 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>14 26 815 987 0 0 1680 1027 </string>
+	<string>847 13 815 493 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>847 13 815 324 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -2467,14 +2467,15 @@
 	<array>
 		<string>3.3.6</string>
 		<string>3.3.8</string>
-		<string>3.3.4</string>
+		<string>3.3.2</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.5</string>
 		<string>3.3.7</string>
+		<string>3.3.9</string>
 		<string>3.3.0</string>
-		<string>3.3.2</string>
 		<string>3.2.9</string>
+		<string>3.3.4</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -2498,7 +2499,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>589719605.48161697</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>192</integer>
+	<integer>207</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3348,7 +3349,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/samuel/.config/iterm2</string>
+	<string>~/.config/iterm2</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -3362,9 +3363,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-09T16:56:00Z</date>
+	<date>2020-02-23T15:15:42Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>3870300397</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>Secure Input</key>
@@ -3390,7 +3393,7 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.3.8</string>
+	<string>3.3.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
