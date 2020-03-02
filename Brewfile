@@ -22,7 +22,6 @@ brew 'r'
 
 # CLI utilities
 brew 'zsh'
-brew 'zsh-syntax-highlighting'
 brew 'getantibody/tap/antibody'
 brew 'bash'
 brew 'neofetch'
