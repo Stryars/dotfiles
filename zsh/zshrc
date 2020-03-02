@@ -1,3 +1,12 @@
+# Identify OS
+platform='unknown'
+unamestr=$(uname)
+if [[ $unamestr == 'Linux' ]]; then
+   platform='linux'
+elif [[ $unamestr == 'Darwin' ]]; then
+   platform='macOS'
+fi
+
 export TERM=xterm-256color
 
 export \
@@ -24,8 +33,13 @@ prompt pure
 bindkey -v
 
 # Aliases
-alias ls='ls -G'
-alias ll='ls -alhFG'
+if [[ $platform == 'linux' ]]; then
+  alias ls='ls --color'
+  alias ll='ls -alhF --color'
+elif [[ $platform == 'macos' ]]; then
+  alias ls='ls -G'
+  alias ll='ls -alhFG'
+fi
 alias cat='bat --theme "Monokai Extended"'
 alias ping='prettyping --nolegend'
 alias preview="fzf --preview 'bat --color always {}'"

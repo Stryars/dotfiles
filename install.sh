@@ -65,6 +65,7 @@ elif [[ $platform == 'linux' ]]; then
     # Install packages
     sudo dnf update
     sudo dnf install -y git \
+      vim \
       R \
       util-linux-user \
       zsh \
@@ -78,7 +79,8 @@ elif [[ $platform == 'linux' ]]; then
       htop \
       asciinema \
       ImageMagick \
-      pandoc
+      pandoc \
+      tilix
 
     # Install antibody (zsh plugin manager)
     curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
@@ -89,6 +91,7 @@ elif [[ $platform == 'linux' ]]; then
 
     # Install diff-so-fancy
     sudo wget https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy -O /usr/local/bin/diff-so-fancy
+    sudo chmod +x /usr/local/bin/diff-so-fancy
   else
     echo "This script currently works for macos and Fedora 22+."
     exit
