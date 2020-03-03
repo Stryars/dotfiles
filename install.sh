@@ -6,11 +6,11 @@ unamestr=$(uname)
 if [[ $unamestr == 'Linux' ]]; then
    platform='linux'
 elif [[ $unamestr == 'Darwin' ]]; then
-   platform='macOS'
+   platform='macos'
 fi
 
 # macOS
-if [[ $platform == 'macOS' ]]; then
+if [[ $platform == 'macos' ]]; then
   # Install Homebrew if not found on system
   if test ! $(which brew); then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -93,7 +93,7 @@ elif [[ $platform == 'linux' ]]; then
     sudo wget https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy -O /usr/local/bin/diff-so-fancy
     sudo chmod +x /usr/local/bin/diff-so-fancy
   else
-    echo "This script currently works for macos and Fedora 22+."
+    echo "This script currently works for macOS and Fedora 22+."
     exit
   fi
 

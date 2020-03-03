@@ -4,7 +4,7 @@ unamestr=$(uname)
 if [[ $unamestr == 'Linux' ]]; then
    platform='linux'
 elif [[ $unamestr == 'Darwin' ]]; then
-   platform='macOS'
+   platform='macos'
 fi
 
 export TERM=xterm-256color
