@@ -104,7 +104,7 @@ elif [[ $platform == 'linux' ]]; then
       tilix
 
     sudo wget https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping -O /usr/local/bin/prettyping
-    chmod +x /usr/local/bin/prettyping
+    sudo chmod +x /usr/local/bin/prettyping
   else
     echo "This script currently works for macOS, Fedora 22+ and Ubuntu 16.04+."
     exit
