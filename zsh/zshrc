@@ -52,3 +52,11 @@ eval $(thefuck --alias)
 
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/load_conda.sh
+
+# Source fzf preferences
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Fix for Tilix, see https://gnunn1.github.io/tilix-web/manual/vteconfig/
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Identify OS
 platform='unknown'
@@ -58,12 +58,13 @@ if [[ $platform == 'macos' ]]; then
   ln -sf ~/.config/R/Makevars ~/.R/Makevars
 elif [[ $platform == 'linux' ]]; then
   # Get os name
-  osname=$(cat /etc/os-release | grep ^ID | sed -e 's/ID=//')
-  versionid=$(cat /etc/os-release | grep ^VERSION_ID | sed -e 's/VERSION_ID=//')
+  osname=$(cat /etc/os-release | grep ^ID= | sed -e 's/ID=//')
+  versionid=$(cat /etc/os-release | grep ^VERSION_ID= | sed -e 's/VERSION_ID=//')
 
   if [[ $osname == 'fedora' && $versionid -ge 22 ]]; then
     # Install packages
     sudo dnf update
+    sudo dnf groupinstall "Development Tools"
     sudo dnf install -y git \
       vim \
       R \
@@ -81,21 +82,49 @@ elif [[ $platform == 'linux' ]]; then
       ImageMagick \
       pandoc \
       tilix
+  elif [[ $osname == 'ubuntu' ]]; then
+    # Install packages
+    sudo apt update
+    sudo apt install -y build-essential \
+      curl \
+      git \
+      vim \
+      r-base \
+      zsh \
+      neofetch \
+      thefuck \
+      bat \
+      fzf \
+      tmux \
+      tldr \
+      htop \
+      asciinema \
+      imagemagick \
+      pandoc \
+      tilix
 
-    # Install antibody (zsh plugin manager)
-    curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
-
-    # Install zsh syntax highlighting
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-      ~/.config/zsh/zsh-syntax-highlighting
-
-    # Install diff-so-fancy
-    sudo wget https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy -O /usr/local/bin/diff-so-fancy
-    sudo chmod +x /usr/local/bin/diff-so-fancy
+    sudo wget https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping -O /usr/local/bin/prettyping
+    chmod +x /usr/local/bin/prettyping
   else
-    echo "This script currently works for macOS and Fedora 22+."
+    echo "This script currently works for macOS, Fedora 22+ and Ubuntu 16.04+."
     exit
   fi
+
+  # Install Anaconda
+  wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
+  chmod +x Anaconda3-2019.10-Linux-x86_64.sh
+  ./Anaconda3-2019.10-Linux-x86_64.sh
+
+  # Install diff-so-fancy
+  sudo wget https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy -O /usr/local/bin/diff-so-fancy
+  sudo chmod +x /usr/local/bin/diff-so-fancy
+
+  # Install antibody (zsh plugin manager)
+  curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
+
+  # Install zsh syntax highlighting
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+	  ~/.config/zsh/zsh-syntax-highlighting
 
   # Symlink .gitconfig
   ln -sf ~/.config/git/gitconfig.linux ~/.gitconfig
