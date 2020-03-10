@@ -93,8 +93,6 @@ elif [[ $platform == 'linux' ]]; then
       zsh \
       neofetch \
       thefuck \
-      bat \
-      fzf \
       tmux \
       tldr \
       htop \
@@ -103,8 +101,14 @@ elif [[ $platform == 'linux' ]]; then
       pandoc \
       tilix
 
+    # Installing prettyping
     sudo wget https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping -O /usr/local/bin/prettyping
     sudo chmod +x /usr/local/bin/prettyping
+
+    # Installing bat
+    wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
+    sudo dpkg -i bat_0.12.1_amd64.deb
+    rm bat_0.12.1_amd64.deb
   else
     echo "This script currently works for macOS, Fedora 22+ and Ubuntu 16.04+."
     exit
@@ -114,6 +118,10 @@ elif [[ $platform == 'linux' ]]; then
   wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
   chmod +x Anaconda3-2019.10-Linux-x86_64.sh
   ./Anaconda3-2019.10-Linux-x86_64.sh
+
+  # Installing fzf
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
 
   # Install diff-so-fancy
   sudo wget https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy -O /usr/local/bin/diff-so-fancy
