@@ -153,10 +153,6 @@ elif [[ $platform == 'linux' ]]; then
 
   # Symlink tmux.conf
   ln -sf ~/.config/tmux/tmux.conf ~/.tmux.conf
-
-  # Symlink R Makevars
-  mkdir ~/.R/
-  ln -sf ~/.config/R/Makevars ~/.R/Makevars
 else
   echo "Only macOS and Linux platforms are supported."
 fi
