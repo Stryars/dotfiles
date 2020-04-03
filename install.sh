@@ -78,6 +78,7 @@ elif [[ $platform == 'linux' ]]; then
       tmux \
       tldr \
       htop \
+      ncdu \
       asciinema \
       ImageMagick \
       pandoc \
@@ -96,6 +97,7 @@ elif [[ $platform == 'linux' ]]; then
       tmux \
       tldr \
       htop \
+      ncdu \
       asciinema \
       imagemagick \
       pandoc \
