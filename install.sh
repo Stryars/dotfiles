@@ -61,7 +61,7 @@ elif [[ $platform == 'linux' ]]; then
   osname=$(cat /etc/os-release | grep ^ID= | sed -e 's/ID=//')
   versionid=$(cat /etc/os-release | grep ^VERSION_ID= | sed -e 's/VERSION_ID=//')
 
-  if [[ $osname == 'fedora' && $versionid -ge 22 ]]; then
+  if [[ $osname == 'fedora' && $versionid -ge 28 ]]; then
     # Install packages
     sudo dnf update
     sudo dnf groupinstall "Development Tools"
@@ -70,6 +70,7 @@ elif [[ $platform == 'linux' ]]; then
       R \
       util-linux-user \
       zsh \
+      fd-find \
       neofetch \
       thefuck \
       prettyping \
@@ -92,6 +93,7 @@ elif [[ $platform == 'linux' ]]; then
       vim \
       r-base \
       zsh \
+      fd-find \
       neofetch \
       thefuck \
       tmux \

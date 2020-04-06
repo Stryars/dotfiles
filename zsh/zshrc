@@ -33,17 +33,26 @@ bindkey -v
 
 # Aliases
 if [[ $platform == 'linux' ]]; then
+  # Get os name
+  osname=$(cat /etc/os-release | grep ^ID= | sed -e 's/ID=//')
+
+  if [[ $osname == 'ubuntu' ]]; then
+    alias find='fdfind'
+  else
+    alias find='fd'
+  fi
+
   alias ls='ls --color'
   alias ll='ls -alhF --color'
 elif [[ $platform == 'macos' ]]; then
   alias ls='ls -G'
   alias ll='ls -alhFG'
+  alias find='fd'
 fi
 alias cat='bat --theme "Monokai Extended"'
 alias ping='prettyping --nolegend'
 alias preview="fzf --preview 'bat --color always {}'"
 alias top="htop"
-alias find='fd'
 alias du="ncdu --color dark -rr -x"
 alias help='tldr'
 alias afk="open -a /System/Library/CoreServices/ScreenSaverEngine.app"
