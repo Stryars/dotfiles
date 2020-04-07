@@ -134,6 +134,10 @@ elif [[ $platform == 'linux' ]]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
 	  ~/.config/zsh/zsh-syntax-highlighting
 
+  # Create path_env.sh and load_conda.sh
+  touch ~/.config/path_env.sh
+  touch ~/.config/load_conda.sh
+
   # Symlink .gitconfig
   ln -sf ~/.config/git/gitconfig.linux ~/.gitconfig
 
