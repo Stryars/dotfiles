@@ -114,7 +114,7 @@ elif [[ $platform == 'linux' ]]; then
     sudo dpkg -i bat_0.12.1_amd64.deb
     rm bat_0.12.1_amd64.deb
   else
-    echo "This script currently works for macOS, Fedora 22+ and Ubuntu 16.04+."
+    echo "This script currently works for macOS 10.15+, Fedora 28+ and Ubuntu 19.04+."
     exit
   fi
 
