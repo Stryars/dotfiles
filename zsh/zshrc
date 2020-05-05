@@ -68,3 +68,10 @@ source ~/.config/load_conda.sh
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
+
+# Compress PDF function using ghostscript
+# https://superuser.com/questions/293856/reducing-pdf-file-size
+compresspdf() {
+    echo 'Usage: compresspdf [input file] [output file] [screen|ebook|printer|prepress]'
+    gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/${3:-"screen"} -dCompatibilityLevel=1.4 -sOutputFile="$2" "$1"
+}
