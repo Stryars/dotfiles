@@ -25,7 +25,7 @@ if [[ $platform == 'macos' ]]; then
   ln -sf ~/.config/git/gitconfig.macos ~/.gitconfig
 
   # Make zsh the default shell 
-  chsh -s $(which zsh)
+  sudo chsh -s $(which zsh)
 
   # Install zsh syntax highlighting
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
@@ -68,6 +68,7 @@ elif [[ $platform == 'linux' ]]; then
     sudo dnf install -y git \
       vim \
       R \
+      rstudio-desktop \
       util-linux-user \
       zsh \
       fd-find \
@@ -142,7 +143,7 @@ elif [[ $platform == 'linux' ]]; then
   ln -sf ~/.config/git/gitconfig.linux ~/.gitconfig
 
   # Make zsh the default shell 
-  chsh -s $(which zsh)
+  sudo chsh -s $(which zsh)
 
   # Symlink zsh dotfiles
   ln -sf ~/.config/zsh/zshrc ~/.zshrc
