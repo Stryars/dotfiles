@@ -25,11 +25,13 @@ if [[ $platform == 'macos' ]]; then
   ln -sf ~/.config/git/gitconfig.macos ~/.gitconfig
 
   # Make zsh the default shell 
-  sudo chsh -s $(which zsh)
+  chsh -s $(which zsh)
 
   # Install zsh syntax highlighting
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-    ~/.config/zsh/zsh-syntax-highlighting
+  if [ ! -d "$HOME/.config//zsh/zsh-syntax-highlighting/" ]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+      ~/.config/zsh/zsh-syntax-highlighting
+  fi
 
   # Symlink zsh dotfiles
   ln -sf ~/.config/zsh/zshrc ~/.zshrc
@@ -132,8 +134,10 @@ elif [[ $platform == 'linux' ]]; then
   curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
 
   # Install zsh syntax highlighting
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-	  ~/.config/zsh/zsh-syntax-highlighting
+  if [ ! -d "$HOME/.config//zsh/zsh-syntax-highlighting/" ]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+      ~/.config/zsh/zsh-syntax-highlighting
+  fi
 
   # Create path_env.sh and load_conda.sh
   touch ~/.config/path_env.sh
@@ -143,7 +147,7 @@ elif [[ $platform == 'linux' ]]; then
   ln -sf ~/.config/git/gitconfig.linux ~/.gitconfig
 
   # Make zsh the default shell 
-  sudo chsh -s $(which zsh)
+  chsh -s $(which zsh)
 
   # Symlink zsh dotfiles
   ln -sf ~/.config/zsh/zshrc ~/.zshrc
