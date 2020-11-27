@@ -134,3 +134,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Disable folding
 let g:pandoc#modules#disabled = ["folding"]
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""" ALE """""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set ALE C++ options
+let g:ale_cpp_gcc_options = '-Werror -Wall -Weffc++ -Wextra -Wsign-conversion -pedantic-errors -std=c++17'
+let g:ale_linters = {'c': ['gcc'], 'cpp': ['g++'], 'python': ['flake8', 'pylint']}

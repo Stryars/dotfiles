@@ -198,7 +198,7 @@
     "focus-follows-mouse": false,
     "enables-layout-hud": false,
     "enables-layout-hud-on-space-change": false,
-    "window-margin-size": 15,
+    "window-margin-size": 0,
     "window-resize-step": 5,
     "window-margins": true,
     "window-minimum-height": 0,
