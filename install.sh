@@ -73,6 +73,7 @@ elif [[ $platform == 'linux' ]]; then
       rstudio-desktop \
       util-linux-user \
       zsh \
+      exa \
       fd-find \
       neofetch \
       thefuck \
@@ -96,6 +97,7 @@ elif [[ $platform == 'linux' ]]; then
       vim \
       r-base \
       zsh \
+      exa \
       fd-find \
       neofetch \
       thefuck \
