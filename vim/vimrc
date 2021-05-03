@@ -22,7 +22,9 @@ call plug#begin('~/.vim/plugged')
 " vim-surround: all about surroundings: brackets, quotes, etc.
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
-Plug 'lifepillar/vim-solarized8'
+"Plug 'lifepillar/vim-solarized8'
+" dracula: dracula color scheme
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'SirVer/ultisnips'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -99,8 +101,8 @@ let g:pandoc#formatting#mode = "h"
 " Syntax highlighting
 syntax enable
 set termguicolors
-set background=dark
-colorscheme solarized8
+"set background=dark
+colorscheme dracula
 
 " Set utf8 as standard encoding
 set encoding=utf8 
@@ -110,7 +112,7 @@ set encoding=utf8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Lightline configuration
-let g:lightline = {'colorscheme': 'solarized',}
+let g:lightline = {'colorscheme': 'dracula',}
 "
 " Use lightline instead of the default vim message
 set noshowmode 
