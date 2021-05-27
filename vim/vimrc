@@ -1,5 +1,8 @@
+" A lot of this configuration was copied from Miguel Grinberg's vimrc
+" See https://gist.github.com/miguelgrinberg/527bb5a400791f89b3c4da4bd61222e4
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""" General  """"""""""""""""""""""""""
+""""""""""""""""""""""""" General  """""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 filetype plugin indent on
@@ -19,26 +22,33 @@ endif
 
 " vim-plug plugins. Run :PlugInstall to download them.
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible'
+Plug 'ap/vim-buftabline'
 " vim-surround: all about surroundings: brackets, quotes, etc.
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
-"Plug 'lifepillar/vim-solarized8'
 " dracula: dracula color scheme
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'SirVer/ultisnips'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
-" Goyo: distraction free writing
-Plug 'junegunn/goyo.vim'
+Plug 'preservim/tagbar'
 " Vim-Jinja2-Syntax: Jinja2 sytnax highlighting
 Plug 'Glench/Vim-Jinja2-Syntax'
 " vim-pandoc: Pandoc integration
 Plug 'vim-pandoc/vim-pandoc'
 " vim-pandoc-syntax: Pandoc markdown syntax
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'alvan/vim-closetag'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -64,7 +74,9 @@ set showmatch
 set number
 
 " Set utf8 as standard encoding
+set fileformat=unix
 set encoding=utf8 
+set fileencoding=utf-8
 
 " Set a margin at 80 characters
 set colorcolumn=80
@@ -79,9 +91,16 @@ set expandtab
 " Be smart when using tabs
 set smarttab
 
-" 1 tab == 2 spaces
-set shiftwidth=2
-set tabstop=2
+" 1 tab == 2 or 4 spaces
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType r setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType c setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Copy the identation of the previous line
 set autoindent
@@ -94,6 +113,11 @@ set textwidth=79
 let g:pandoc#formatting#textwidth=79
 let g:pandoc#formatting#mode = "h"
 
+" disable autoindent when pasting text
+" source: https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""" Color and fonts " """"""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -103,9 +127,6 @@ syntax enable
 set termguicolors
 "set background=dark
 colorscheme dracula
-
-" Set utf8 as standard encoding
-set encoding=utf8 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""" Status line """""""""""""""""""""""""
@@ -119,6 +140,26 @@ set noshowmode
 
 " Always show the status line
 set laststatus=2 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""" Mouse """"""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set mouse=a
+let g:is_mouse_enabled = 1
+noremap <silent> <Leader>m :call ToggleMouse()<CR>
+function ToggleMouse()
+    if g:is_mouse_enabled == 1
+        echo "Mouse OFF"
+        set mouse=
+        let g:is_mouse_enabled = 0
+    else
+        echo "Mouse ON"
+        set mouse=a
+        let g:is_mouse_enabled = 1
+    endif
+endfunction
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""" UltiSnips """"""""""""""""""""""""""
@@ -136,6 +177,46 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Disable folding
 let g:pandoc#modules#disabled = ["folding"]
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""" auto-pairs """"""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""" tagbar """"""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+map <leader>t :TagbarToggle<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""" NERDTree """""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI = 1
+let g:nerdtree_open = 0
+map <leader>n :call NERDTreeToggle()<CR>
+function NERDTreeToggle()
+    NERDTreeTabsToggle
+    if g:nerdtree_open == 1
+        let g:nerdtree_open = 0
+    else
+        let g:nerdtree_open = 1
+        wincmd p
+    endif
+endfunction
+
+function! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+autocmd VimEnter * call StartUp()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""" ALE """""""""""""""""""""""""""""
