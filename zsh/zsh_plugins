@@ -1,4 +1,5 @@
 zsh-users/zsh-completions
+zdharma/fast-syntax-highlighting
 zsh-users/zsh-autosuggestions
 
 # zsh-async used for the Pure theme
